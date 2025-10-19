@@ -27,14 +27,15 @@ async function NextAppointment() {
   const isToday = isSameDay(appointmentDate, new Date());
 
   return (
-    <Card className="border-primary/20 bg-gradient-to-br from-primary/5 to-background">
-      <CardHeader>
+    <Card className="relative overflow-hidden group hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/30 h-full">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      <CardHeader className="relative">
         <CardTitle className="flex items-center gap-2">
           <CalendarIcon className="size-5 text-primary" />
           Next Appointment
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="relative space-y-4">
         {/* Status Badge */}
         <div className="flex items-center justify-between">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/10 rounded-full border border-primary/20">

@@ -5,10 +5,20 @@ import { CalendarIcon, CrownIcon, HomeIcon, MicIcon, SettingsIcon } from "lucide
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 function Navbar() {
   const { user } = useUser();
   const pathname = usePathname();
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  useEffect(() => {
+    // Check if user is admin by comparing email with environment variable
+    const adminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL;
+    if (user?.emailAddresses?.[0]?.emailAddress === adminEmail) {
+      setIsAdmin(true);
+    }
+  }, [user]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-6 py-2 border-b border-border/50 bg-background/80 backdrop-blur-md h-14 sm:h-16">
@@ -62,7 +72,7 @@ function Navbar() {
             </Link>
 
             {/* Admin Link - only show for admin users */}
-            {user?.emailAddresses?.[0]?.emailAddress === process.env.ADMIN_EMAIL && (
+            {isAdmin && (
               <Link
                 href="/admin"
                 className={`flex items-center gap-2 transition-colors hover:text-foreground ${
