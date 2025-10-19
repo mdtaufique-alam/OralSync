@@ -428,7 +428,7 @@ export default function MinimalistVoiceAssistant() {
 
   return (
     <div className="w-full max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 min-h-[600px]">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 min-h-[500px] sm:min-h-[600px] touch-pan-y">
         {/* Left Side - OralSync Branding & Voice Control */}
         <div className="flex flex-col justify-center space-y-8">
           {/* OralSync Logo & Branding */}
@@ -520,7 +520,7 @@ export default function MinimalistVoiceAssistant() {
                 onClick={voiceState.isRecording ? stopVoiceInput : startVoiceInput}
                 disabled={voiceState.isProcessing || voiceState.isSpeaking}
                 size="lg"
-                className={`w-80 h-14 text-base font-medium transition-all duration-300 ${
+                className={`w-full max-w-80 h-12 sm:h-14 text-sm sm:text-base font-medium transition-all duration-300 ${
                   voiceState.isRecording
                     ? "bg-red-500 hover:bg-red-600 text-white shadow-lg shadow-red-500/25" 
                     : voiceState.isProcessing
@@ -552,7 +552,7 @@ export default function MinimalistVoiceAssistant() {
                   </>
                 )}
               </Button>
-              <p className="text-sm text-muted-foreground text-center">
+              <p className="text-xs sm:text-sm text-muted-foreground text-center">
                 Hold to talk • Release to send
               </p>
             </div>
@@ -576,7 +576,7 @@ export default function MinimalistVoiceAssistant() {
 
         {/* Right Side - Chat Interface */}
         <div className="flex flex-col h-full">
-          <Card className="flex-1 flex flex-col h-[500px]">
+          <Card className="flex-1 flex flex-col h-[400px] sm:h-[500px]">
             <CardHeader className="pb-4">
               <CardTitle className="flex items-center justify-between text-xl">
                 <div className="flex items-center gap-2">
@@ -610,7 +610,7 @@ export default function MinimalistVoiceAssistant() {
               {/* Chat Messages */}
               <div 
                 className="flex-1 overflow-y-auto mb-6 space-y-4"
-                style={{ maxHeight: '350px' }}
+                style={{ maxHeight: '280px' }}
               >
                 {messages.length === 0 ? (
                   <div className="flex flex-col items-center justify-center h-full text-center py-12">
