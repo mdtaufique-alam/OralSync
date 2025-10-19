@@ -128,7 +128,7 @@ export default function MinimalistVoiceAssistant() {
         const hasSpeechRecognition = 'webkitSpeechRecognition' in window || 'SpeechRecognition' in window;
         
         // Check for media devices
-        const hasMediaDevices = navigator.mediaDevices && navigator.mediaDevices.getUserMedia;
+        const hasMediaDevices = navigator && 'mediaDevices' in navigator && navigator.mediaDevices;
         
         // Check for speech synthesis
         const hasSpeechSynthesis = 'speechSynthesis' in window && window.speechSynthesis;
