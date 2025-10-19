@@ -17,7 +17,7 @@ export default function ClerkProviderWrapper({ children }: ClerkProviderWrapperP
           colorText: "#1a1a1a",
           colorTextSecondary: "#64748b",
           colorInputBackground: "#f1f5f9",
-          colorInputBorder: "#e2e8f0",
+          colorBorder: "#e2e8f0",
           borderRadius: "0.5rem",
         },
       }}
