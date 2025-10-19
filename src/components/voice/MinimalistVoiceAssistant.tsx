@@ -131,7 +131,7 @@ export default function MinimalistVoiceAssistant() {
         const hasMediaDevices = navigator.mediaDevices && navigator.mediaDevices.getUserMedia;
         
         // Check for speech synthesis
-        const hasSpeechSynthesis = 'speechSynthesis' in window;
+        const hasSpeechSynthesis = 'speechSynthesis' in window && window.speechSynthesis;
         
         if (hasSpeechRecognition && hasMediaDevices && hasSpeechSynthesis) {
           setIsSupported(true);
