@@ -10,46 +10,10 @@ function Hero() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
-    // Initially disable scrolling
-    if (!isScrolled) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      // Enable scrolling after animation
-      document.body.style.overflow = 'auto';
-    }
-    
-    const handleScroll = (e: Event) => {
-      if (!isScrolled) {
-        e.preventDefault();
-        setIsScrolled(true);
-      }
-    };
-
-    const handleWheel = (e: WheelEvent) => {
-      if (!isScrolled) {
-        e.preventDefault();
-        setIsScrolled(true);
-      }
-    };
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (!isScrolled && [32, 33, 34, 35, 36, 37, 38, 39, 40].includes(e.keyCode)) {
-        e.preventDefault();
-        setIsScrolled(true);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: false });
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    window.addEventListener("keydown", handleKeyDown);
-
-    return () => {
-      document.body.style.overflow = 'auto';
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("wheel", handleWheel);
-      window.removeEventListener("keydown", handleKeyDown);
-    };
-  }, [isScrolled]);
+    // Enable scrolling immediately and trigger animation
+    document.body.style.overflow = 'auto';
+    setIsScrolled(true);
+  }, []);
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden pt-20 bg-gradient-to-br from-background via-muted/5 to-primary/5">

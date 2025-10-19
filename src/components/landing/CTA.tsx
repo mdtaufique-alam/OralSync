@@ -4,7 +4,7 @@ import { MicIcon, CalendarIcon } from "lucide-react";
 
 function CTA() {
   return (
-    <section className="relative py-20 px-6 overflow-hidden bg-gradient-to-b from-background to-muted/10">
+    <section className="relative py-32 px-6 overflow-hidden bg-gradient-to-b from-background to-muted/10">
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}

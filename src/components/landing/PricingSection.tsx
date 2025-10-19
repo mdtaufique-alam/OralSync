@@ -70,7 +70,7 @@ function PricingSection() {
 
           {/* Pro Plan */}
           <div className="relative">
-            <div className="absolute -top-4 right-8 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
+            <div className="absolute -top-5 right-8 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-medium">
               Popular
             </div>
             <div className="relative bg-card rounded-3xl p-8 border border-primary/50 hover:border-primary/70 transition-colors duration-300">
