@@ -375,9 +375,9 @@ export default function MinimalistVoiceAssistant() {
   return (
     <div className="w-full max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 min-h-[600px]">
-        {/* Left Side - DentWise Branding & Voice Control */}
+        {/* Left Side - OralSync Branding & Voice Control */}
         <div className="flex flex-col justify-center space-y-8">
-          {/* DentWise Logo & Branding */}
+          {/* OralSync Logo & Branding */}
           <div className="text-center space-y-6">
             <div className="relative inline-block">
               <div className={`w-24 h-24 mx-auto rounded-2xl border-2 flex items-center justify-center transition-all duration-500 ${
@@ -387,7 +387,7 @@ export default function MinimalistVoiceAssistant() {
               }`}>
                 <Image 
                   src="/logo.png" 
-                  alt="DentWise Logo" 
+                  alt="OralSync Logo" 
                   width={48} 
                   height={48} 
                   className={`transition-all duration-300 ${
@@ -405,7 +405,7 @@ export default function MinimalistVoiceAssistant() {
             </div>
 
             <div className="space-y-2">
-              <h1 className="text-3xl font-bold text-foreground">DentWise AI</h1>
+              <h1 className="text-3xl font-bold text-foreground">OralSync AI</h1>
               <p className="text-muted-foreground">AI-Powered Dental Assistant</p>
               <Badge variant="secondary" className="mt-2">
                 <SparklesIcon className="w-3 h-3 mr-1" />

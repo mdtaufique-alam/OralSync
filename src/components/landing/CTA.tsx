@@ -65,7 +65,7 @@ function CTA() {
               <div className="relative">
                 <Image
                   src="/cta.png"
-                  alt="DentWise AI Assistant"
+                  alt="OralSync AI Assistant"
                   width={300}
                   height={300}
                   className="relative w-80 h-auto drop-shadow-xl"

@@ -17,7 +17,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "DentWise - AI Powered Dental Assistant",
+  title: "OralSync - AI Powered Dental Assistant",
   description:
     "Get instant dental advice through voice calls with our AI assistant. Avaiable 24/7.",
 };

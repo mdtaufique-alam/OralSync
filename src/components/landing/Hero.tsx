@@ -64,7 +64,7 @@ function Hero() {
             <div className={`relative flex justify-center items-center transition-all duration-700 ease-out ${isScrolled ? 'justify-start' : 'justify-center'}`}>
               <Image
                 src={"/hero.png"}
-                alt="DentWise AI"
+                alt="OralSync AI"
                 width={600}
                 height={600}
                 className="w-full h-auto"
