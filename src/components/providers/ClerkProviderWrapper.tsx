@@ -8,8 +8,15 @@ interface ClerkProviderWrapperProps {
 }
 
 export default function ClerkProviderWrapper({ children }: ClerkProviderWrapperProps) {
+  // Check if Clerk is configured
+  if (!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY) {
+    console.log("Clerk publishable key not configured, rendering without authentication");
+    return <>{children}</>;
+  }
+
   return (
     <ClerkProvider
+      publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY}
       appearance={{
         variables: {
           colorPrimary: "#2563eb",
