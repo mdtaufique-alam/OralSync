@@ -1,3 +1,5 @@
+"use client";
+
 import { SignInButton, SignUpButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,20 +15,41 @@ function Header() {
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          <a href="#" className="text-muted-foreground hover:text-foreground">
+          <a 
+            href="#how-it-works" 
+            className="text-muted-foreground hover:text-foreground transition-colors duration-200 scroll-smooth"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
             How it Works
           </a>
-          <a href="#" className="text-muted-foreground hover:text-foreground">
+          <a 
+            href="#pricing" 
+            className="text-muted-foreground hover:text-foreground transition-colors duration-200 scroll-smooth"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
             Pricing
           </a>
-          <a href="#" className="text-muted-foreground hover:text-foreground">
+          <a 
+            href="#about" 
+            className="text-muted-foreground hover:text-foreground transition-colors duration-200 scroll-smooth"
+            onClick={(e) => {
+              e.preventDefault();
+              document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+          >
             About
           </a>
         </div>
 
         <div className="flex items-center gap-3">
           <SignInButton mode="modal">
-            <Button variant={"ghost"} size={"sm"}>
+            <Button variant={"ghost"} size={"sm"} className="text-muted-foreground hover:text-foreground">
               Login
             </Button>
           </SignInButton>

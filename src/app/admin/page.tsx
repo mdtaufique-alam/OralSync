@@ -11,8 +11,18 @@ async function AdminPage() {
   const adminEmail = process.env.ADMIN_EMAIL;
   const userEmail = user.emailAddresses[0]?.emailAddress;
 
+  // Debug logging
+  console.log("Admin Email from env:", adminEmail);
+  console.log("User Email:", userEmail);
+  console.log("Is admin:", userEmail === adminEmail);
+
   // user is not the admin
-  if (!adminEmail || userEmail !== adminEmail) redirect("/dashboard");
+  if (!adminEmail || userEmail !== adminEmail) {
+    console.log("Redirecting to dashboard - not admin");
+    redirect("/dashboard");
+  }
+
+  console.log("Access granted to admin dashboard");
   return <AdminDashboardClient />;
 }
 

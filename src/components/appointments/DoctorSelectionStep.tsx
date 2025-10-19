@@ -5,6 +5,7 @@ import { MapPinIcon, PhoneIcon, StarIcon } from "lucide-react";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { DoctorCardsLoading } from "./DoctorCardsLoading";
+import UserAvatar from "../ui/avatar";
 
 interface DoctorSelectionStepProps {
   selectedDentistId: string | null;
@@ -42,12 +43,11 @@ function DoctorSelectionStep({
           >
             <CardHeader className="pb-4">
               <div className="flex items-start gap-4">
-                <Image
-                  src={dentist.imageUrl!}
+                <UserAvatar
+                  src={dentist.imageUrl}
                   alt={dentist.name}
-                  width={64}
-                  height={64}
-                  className="w-16 h-16 rounded-full object-cover"
+                  fallback={dentist.name?.charAt(0) || "D"}
+                  size="lg"
                 />
                 <div className="flex-1">
                   <CardTitle className="text-lg">{dentist.name}</CardTitle>

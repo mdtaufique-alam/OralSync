@@ -62,15 +62,17 @@ function Navbar() {
             </Link>
 
             {/* Admin Link - only show for admin users */}
-            <Link
-              href="/admin"
-              className={`flex items-center gap-2 transition-colors hover:text-foreground ${
-                pathname === "/admin" ? "text-foreground" : "text-muted-foreground"
-              }`}
-            >
-              <SettingsIcon className="w-4 h-4" />
-              <span className="hidden md:inline">Admin</span>
-            </Link>
+            {user?.emailAddresses?.[0]?.emailAddress === process.env.ADMIN_EMAIL && (
+              <Link
+                href="/admin"
+                className={`flex items-center gap-2 transition-colors hover:text-foreground ${
+                  pathname === "/admin" ? "text-foreground" : "text-muted-foreground"
+                }`}
+              >
+                <SettingsIcon className="w-4 h-4" />
+                <span className="hidden md:inline">Admin</span>
+              </Link>
+            )}
           </div>
         </div>
 

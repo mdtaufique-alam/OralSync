@@ -12,11 +12,13 @@ export default function ClerkProviderWrapper({ children }: ClerkProviderWrapperP
     <ClerkProvider
       appearance={{
         variables: {
-          colorPrimary: "#e78a53",
-          colorBackground: "#f3f4f6",
-          colorText: "#111827",
-          colorTextSecondary: "#6b7280",
-          colorInputBackground: "#f3f4f6",
+          colorPrimary: "#2563eb",
+          colorBackground: "#fafafa",
+          colorText: "#1a1a1a",
+          colorTextSecondary: "#64748b",
+          colorInputBackground: "#f1f5f9",
+          colorInputBorder: "#e2e8f0",
+          borderRadius: "0.5rem",
         },
       }}
     >

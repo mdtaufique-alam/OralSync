@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../ui
 import { Calendar } from "lucide-react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../ui/table";
 import { Button } from "../ui/button";
+import UserAvatar from "../ui/avatar";
 
 function RecentAppointments() {
   const { data: appointments = [] } = useGetAppointments();
@@ -56,14 +57,32 @@ function RecentAppointments() {
               {appointments.map((appointment) => (
                 <TableRow key={appointment.id}>
                   <TableCell>
-                    <div>
-                      <div className="font-medium">{appointment.patientName}</div>
-                      <div className="text-sm text-muted-foreground">
-                        {appointment.patientEmail}
+                    <div className="flex items-center gap-3">
+                      <UserAvatar
+                        src={appointment.patientAvatarUrl}
+                        alt={appointment.patientName}
+                        fallback={appointment.patientName?.charAt(0) || "P"}
+                        size="sm"
+                      />
+                      <div>
+                        <div className="font-medium">{appointment.patientName}</div>
+                        <div className="text-sm text-muted-foreground">
+                          {appointment.patientEmail}
+                        </div>
                       </div>
                     </div>
                   </TableCell>
-                  <TableCell className="font-medium">{appointment.doctorName}</TableCell>
+                  <TableCell>
+                    <div className="flex items-center gap-3">
+                      <UserAvatar
+                        src={appointment.doctorImageUrl}
+                        alt={appointment.doctorName}
+                        fallback={appointment.doctorName?.charAt(0) || "D"}
+                        size="sm"
+                      />
+                      <span className="font-medium">{appointment.doctorName}</span>
+                    </div>
+                  </TableCell>
                   <TableCell>
                     <div>
                       <div className="font-medium">

@@ -1,157 +1,70 @@
-# 🦷 DentWise - Modern Dental Practice Management Platform
+<h1 align="center">🦷 Dentwise – Dental Platform with AI Voice Agent 🦷</h1>
 
-A comprehensive dental practice management platform built with Next.js, featuring appointment booking, patient management, and AI-powered voice assistance.
+![Demo App](/public/screenshot-for-readme.png)
 
-## ✨ Features
+Highlights:
 
-- 🏠 **Modern Landing Page** with beautiful gradients and responsive design
-- 🔐 **Authentication** via Clerk (Google, GitHub, Email & Password)
-- 📅 **Appointment Booking System** with 3-step booking flow
-- 🦷 **Doctor Management** with specialties and availability
-- 📩 **Email Notifications** for appointment confirmations (Resend)
-- 📊 **Admin Dashboard** for managing appointments and doctors
-- 🗣️ **AI Voice Agent** powered by Vapi (Pro Plans)
-- 💳 **Subscription Management** with Clerk billing
-- 🎨 **Modern UI** with Tailwind CSS and Shadcn components
-- ⚡ **Fast Performance** with Next.js 15 and Turbopack
-
-## 🚀 Quick Start
-
-### Prerequisites
-
-- Node.js 18+ 
-- npm or yarn
-- Git
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd dentwise
-   ```
-
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
-
-3. **Set up environment variables**
-   ```bash
-   cp .env.example .env.local
-   ```
-   
-   Update `.env.local` with your API keys:
-   ```bash
-   # Clerk Authentication
-   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
-   CLERK_SECRET_KEY=your_clerk_secret_key
-   
-   # Database
-   DATABASE_URL="file:./dev.db"
-   
-   # Vapi AI (Optional)
-   NEXT_PUBLIC_VAPI_ASSISTANT_ID=your_vapi_assistant_id
-   NEXT_PUBLIC_VAPI_API_KEY=your_vapi_api_key
-   
-   # Admin
-   ADMIN_EMAIL=admin@yourdomain.com
-   
-   # Email Service
-   RESEND_API_KEY=your_resend_api_key
-   
-   # App URL
-   NEXT_PUBLIC_APP_URL=http://localhost:3000
-   ```
-
-4. **Set up the database**
-   ```bash
-   npx prisma generate
-   npx prisma db push
-   ```
-
-5. **Run the development server**
-   ```bash
-   npm run dev
-   ```
-
-6. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-## 🛠️ Tech Stack
-
-- **Framework**: Next.js 15 with App Router
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS + Shadcn UI
-- **Authentication**: Clerk
-- **Database**: SQLite (Prisma ORM)
-- **Email**: Resend
-- **AI Voice**: Vapi
-- **State Management**: TanStack Query
-- **Deployment**: Vercel/Netlify ready
-
-## 📁 Project Structure
-
-```
-dentwise/
-├── src/
-│   ├── app/                 # Next.js app router pages
-│   ├── components/          # Reusable UI components
-│   ├── lib/                # Utility functions and configurations
-│   ├── hooks/              # Custom React hooks
-│   └── types/              # TypeScript type definitions
-├── prisma/                 # Database schema and migrations
-├── public/                 # Static assets
-└── scripts/               # Utility scripts
-```
-
-## 🔧 Configuration
-
-### Admin Access
-
-To access the admin dashboard, set your email in the `ADMIN_EMAIL` environment variable and sign up with that email address.
-
-### Email Setup
-
-1. Create a Resend account at [resend.com](https://resend.com)
-2. Get your API key and add it to `.env.local`
-3. Configure your domain for production use
-
-### AI Voice Setup (Optional)
-
-1. Create a Vapi account at [vapi.ai](https://vapi.ai)
-2. Set up your assistant and get the API keys
-3. Add the keys to your environment variables
-
-## 🚀 Deployment
-
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository to Vercel
-3. Add environment variables in Vercel dashboard
-4. Deploy!
-
-### Other Platforms
-
-The app is compatible with any platform that supports Next.js:
-- Netlify
-- Railway
-- Render
-- DigitalOcean App Platform
-
-## 📝 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📞 Support
-
-If you have any questions or need help, please open an issue on GitHub.
+- 🏠 Modern Landing Page with gradients & images
+- 🔐 Authentication via Clerk (Google, GitHub, Email & Password)
+- 🔑 Email Verification (6-digit code)
+- 📅 Appointment Booking System
+- 🦷 3-Step Booking Flow (Dentist → Service & Time → Confirm)
+- 📩 Email Notifications for Bookings (Resend)
+- 📊 Admin Dashboard for Managing Appointments
+- 🗣️ AI Voice Agent powered by Vapi (Pro Plans only)
+- 💳 Subscription Payments with Clerk (Free + 2 Paid Plans)
+- 🧾 Automatic Invoices via Email
+- 💸 Smart Subscription Upgrades (pay only the difference)
+- 📂 PostgreSQL for Data Persistence
+- 🎨 Styling with Tailwind CSS + Shadcn
+- ⚡ Data Fetching with TanStack Query
+- 🤖 CodeRabbit for PR Optimizations
+- 🧑‍💻 Git & GitHub Workflow (branches, PRs, merges)
+- 🚀 Deployment on Sevalla (free-tier friendly)
 
 ---
 
-Built with ❤️ using Next.js, TypeScript, and modern web technologies.
+## 🧪 .env Setup
+
+```bash
+# Authentication
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+
+# Database
+DATABASE_URL=your_postgres_database_url
+
+# Real-time AI Voice Assistant (FREE!)
+GROQ_API_KEY=your_groq_api_key_here
+
+# Pro Voice Features (Optional)
+NEXT_PUBLIC_VAPI_ASSISTANT_ID=your_vapi_assistant_id
+NEXT_PUBLIC_VAPI_API_KEY=your_vapi_api_key
+
+# Admin & Email
+ADMIN_EMAIL=your_admin_email@example.com
+RESEND_API_KEY=your_resend_api_key
+NEXT_PUBLIC_APP_URL=your_app_url
+```
+
+### 🆓 Free AI Setup (Real-time Voice Assistant)
+
+1. **Get Groq API Key** (FREE!):
+   - Visit: https://console.groq.com/
+   - Sign up for free account
+   - Get your API key
+   - Add to `.env` file: `GROQ_API_KEY=your_key_here`
+
+2. **Features**:
+   - ✅ Real-time voice conversation
+   - ✅ Ultra-fast responses (Groq)
+   - ✅ Multiple free AI models
+   - ✅ Streaming responses
+   - ✅ No API costs for basic usage
+
+## Run the app
+
+```bash
+1- npm install
+2- npm run dev
+```

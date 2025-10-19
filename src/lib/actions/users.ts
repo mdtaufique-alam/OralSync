@@ -25,6 +25,7 @@ export async function syncUser() {
             firstName: user.firstName || existingUser.firstName,
             lastName: user.lastName || existingUser.lastName,
             phone: user.phoneNumbers[0]?.phoneNumber || existingUser.phone,
+            avatarUrl: user.imageUrl || existingUser.avatarUrl,
           },
         });
         return updatedUser;
@@ -39,6 +40,7 @@ export async function syncUser() {
         lastName: user.lastName,
         email: user.emailAddresses[0]?.emailAddress || "",
         phone: user.phoneNumbers[0]?.phoneNumber,
+        avatarUrl: user.imageUrl,
       },
     });
 

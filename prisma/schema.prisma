@@ -21,6 +21,7 @@ model User {
   firstName String?
   lastName  String?
   phone     String?
+  avatarUrl String? // User's profile avatar
   createdAt DateTime @default(now()) // member since sep 2025
   updatedAt DateTime @updatedAt
 
