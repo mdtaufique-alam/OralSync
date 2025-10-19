@@ -1,9 +1,6 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 
-// Create the middleware function
-const middleware = clerkMiddleware();
-
 // Conditional middleware based on Clerk configuration
 export default function(request: any) {
   // If Clerk is not configured, just pass through
@@ -12,7 +9,7 @@ export default function(request: any) {
   }
   
   // Use Clerk middleware if configured
-  return middleware(request);
+  return clerkMiddleware()(request, NextResponse);
 }
 
 export const config = {
